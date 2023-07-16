@@ -1,0 +1,24 @@
+const int a0=0;
+
+int main()
+{
+	printf("21371064");
+	printf("\n");
+	printf("heihei%d\n",a0);
+	printf("%d\n",8);
+	printf("AC\n");
+	printf("WA\n");
+	printf("TLE\n");
+	printf("RE\n");
+	printf("PE\n");
+	printf("AK!!\n");
+	int a1=1;
+	if(a0<a1) a1=1;
+	if(a0>a1) a1=1;
+	else a1=1;
+	if(a0==a1) a1=3*4;
+	if(!a1) a1=3-4+5;
+	if(a0>=a1) a1=9;
+	if(a0<=a1) a1=10;
+	return 0;
+}

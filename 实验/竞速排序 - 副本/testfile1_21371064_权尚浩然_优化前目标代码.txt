@@ -1,0 +1,1009 @@
+.data
+a:.space 2000000
+str_1:.asciiz "glo_i = "
+str_2:.asciiz "\n"
+str_3:.asciiz "sum = "
+str_4:.asciiz "\n"
+str_5:.asciiz "main_i = "
+str_6:.asciiz "\n"
+str_7:.asciiz ""
+str_8:.asciiz "\n"
+
+.text
+la $fp a
+
+li $9 0
+sw $9 20($fp)
+subi $sp $sp 2000000
+j label_0
+
+
+label_1:
+sw $4 4($sp)
+sw $5 8($sp)
+li $9 0
+sw $9 12($sp)
+li $9 128
+sw $9 16($sp)
+lw $9 4($sp)
+sw $9 20($sp)
+lw $9 8($sp)
+sw $9 24($sp)
+lw $9 20($sp)
+lw $10 24($sp)
+add $11 $9 $10
+sw $11 20($sp)
+lw $9 16($sp)
+sw $9 28($sp)
+lw $9 20($sp)
+lw $10 28($sp)
+div $9 $10
+mfhi $11
+sw $11 20($sp)
+lw $24 20($sp)
+jr $ra
+jr $ra
+
+label_2:
+sw $4 4($sp)
+lw $9 20($fp)
+sw $9 8($sp)
+li $9 1
+sw $9 12($sp)
+lw $9 8($sp)
+lw $10 12($sp)
+add $11 $9 $10
+sw $11 8($sp)
+lw $9 8($sp)
+sw $9 20($fp)
+lw $9 20($fp)
+sw $9 16($sp)
+lw $24 16($sp)
+jr $ra
+jr $ra
+
+label_3:
+sw $4 4($sp)
+sw $5 8($sp)
+lw $9 4($sp)
+sw $9 12($sp)
+lw $9 8($sp)
+sw $9 16($sp)
+lw $9 12($sp)
+lw $10 16($sp)
+div $9 $10
+mfhi $11
+sw $11 12($sp)
+li $9 0
+sw $9 20($sp)
+lw $9 12($sp)
+lw $10 20($sp)
+seq $11 $9 $10
+sw $11 12($sp)
+lw $9 12($sp)
+beqz $9 label_6
+j label_4
+
+
+label_6:
+j label_5
+
+
+label_4:
+li $9 1
+sw $9 24($sp)
+lw $24 24($sp)
+jr $ra
+
+label_5:
+li $9 0
+sw $9 28($sp)
+lw $24 28($sp)
+jr $ra
+jr $ra
+
+label_7:
+lw $9 20($fp)
+sw $9 4($sp)
+la $a0 str_1
+li $v0 4
+syscall
+lw $9 4($sp)
+move $a0 $9
+li $v0 1
+syscall
+la $a0 str_2
+li $v0 4
+syscall
+li $9 1906
+sw $9 28($sp)
+
+label_8:
+lw $9 20($fp)
+sw $9 32($sp)
+li $9 10000
+sw $9 36($sp)
+lw $9 32($sp)
+lw $10 36($sp)
+slt $11 $9 $10
+sw $11 32($sp)
+lw $9 32($sp)
+beqz $9 label_11
+j label_9
+
+
+label_11:
+j label_10
+
+
+label_9:
+lw $9 0($fp)
+sw $9 40($sp)
+li $9 4
+sw $9 44($sp)
+lw $9 40($sp)
+lw $10 44($sp)
+mul $11 $9 $10
+sw $11 40($sp)
+li $9 32
+sw $9 48($sp)
+lw $9 40($sp)
+lw $10 48($sp)
+mul $11 $9 $10
+sw $11 40($sp)
+lw $9 0($fp)
+sw $9 52($sp)
+lw $9 40($sp)
+lw $10 52($sp)
+mul $11 $9 $10
+sw $11 40($sp)
+lw $9 0($fp)
+sw $9 56($sp)
+lw $9 40($sp)
+lw $10 56($sp)
+div $9 $10
+mflo $11
+sw $11 40($sp)
+li $9 32
+sw $9 60($sp)
+lw $9 40($sp)
+lw $10 60($sp)
+div $9 $10
+mflo $11
+sw $11 40($sp)
+lw $9 4($fp)
+sw $9 72($sp)
+lw $9 72($sp)
+sw $9 4($sp)
+lw $9 40($sp)
+sw $9 76($sp)
+lw $9 76($sp)
+sw $9 8($sp)
+li $9 0
+sw $9 12($sp)
+li $9 128
+sw $9 16($sp)
+lw $9 4($sp)
+sw $9 20($sp)
+lw $9 8($sp)
+sw $9 24($sp)
+lw $9 20($sp)
+lw $10 24($sp)
+add $11 $9 $10
+sw $11 20($sp)
+lw $9 16($sp)
+sw $9 28($sp)
+lw $9 20($sp)
+lw $10 28($sp)
+div $9 $10
+mfhi $11
+sw $11 20($sp)
+lw $9 20($sp)
+sw $9 68($sp)
+j label_12
+
+j label_12
+
+
+label_12:
+lw $9 68($sp)
+sw $9 64($sp)
+lw $9 64($sp)
+sw $9 4($fp)
+lw $9 0($fp)
+sw $9 80($sp)
+li $9 4
+sw $9 84($sp)
+lw $9 80($sp)
+lw $10 84($sp)
+mul $11 $9 $10
+sw $11 80($sp)
+lw $9 4($fp)
+sw $9 88($sp)
+lw $9 80($sp)
+lw $10 88($sp)
+add $11 $9 $10
+sw $11 80($sp)
+lw $9 8($fp)
+sw $9 92($sp)
+lw $9 80($sp)
+lw $10 92($sp)
+add $11 $9 $10
+sw $11 80($sp)
+lw $9 80($sp)
+sw $9 8($sp)
+lw $9 0($fp)
+sw $9 96($sp)
+li $9 4
+sw $9 100($sp)
+lw $9 96($sp)
+lw $10 100($sp)
+mul $11 $9 $10
+sw $11 96($sp)
+lw $9 4($fp)
+sw $9 104($sp)
+lw $9 96($sp)
+lw $10 104($sp)
+add $11 $9 $10
+sw $11 96($sp)
+lw $9 8($fp)
+sw $9 108($sp)
+lw $9 96($sp)
+lw $10 108($sp)
+add $11 $9 $10
+sw $11 96($sp)
+lw $9 12($fp)
+sw $9 112($sp)
+lw $9 96($sp)
+lw $10 112($sp)
+add $11 $9 $10
+sw $11 96($sp)
+lw $9 96($sp)
+sw $9 12($sp)
+lw $9 0($fp)
+sw $9 116($sp)
+li $9 4
+sw $9 120($sp)
+lw $9 116($sp)
+lw $10 120($sp)
+mul $11 $9 $10
+sw $11 116($sp)
+lw $9 4($fp)
+sw $9 124($sp)
+lw $9 116($sp)
+lw $10 124($sp)
+add $11 $9 $10
+sw $11 116($sp)
+lw $9 8($fp)
+sw $9 128($sp)
+lw $9 116($sp)
+lw $10 128($sp)
+add $11 $9 $10
+sw $11 116($sp)
+lw $9 12($fp)
+sw $9 132($sp)
+lw $9 116($sp)
+lw $10 132($sp)
+add $11 $9 $10
+sw $11 116($sp)
+lw $9 16($fp)
+sw $9 136($sp)
+lw $9 116($sp)
+lw $10 136($sp)
+add $11 $9 $10
+sw $11 116($sp)
+lw $9 116($sp)
+sw $9 16($sp)
+lw $9 0($fp)
+sw $9 140($sp)
+li $9 4
+sw $9 144($sp)
+lw $9 140($sp)
+lw $10 144($sp)
+mul $11 $9 $10
+sw $11 140($sp)
+lw $9 4($fp)
+sw $9 148($sp)
+lw $9 140($sp)
+lw $10 148($sp)
+add $11 $9 $10
+sw $11 140($sp)
+lw $9 8($fp)
+sw $9 152($sp)
+lw $9 140($sp)
+lw $10 152($sp)
+add $11 $9 $10
+sw $11 140($sp)
+lw $9 12($fp)
+sw $9 156($sp)
+lw $9 140($sp)
+lw $10 156($sp)
+add $11 $9 $10
+sw $11 140($sp)
+lw $9 16($fp)
+sw $9 160($sp)
+lw $9 140($sp)
+lw $10 160($sp)
+add $11 $9 $10
+sw $11 140($sp)
+lw $9 140($sp)
+sw $9 20($sp)
+lw $9 0($fp)
+sw $9 164($sp)
+li $9 4
+sw $9 168($sp)
+lw $9 164($sp)
+lw $10 168($sp)
+mul $11 $9 $10
+sw $11 164($sp)
+lw $9 4($fp)
+sw $9 172($sp)
+lw $9 164($sp)
+lw $10 172($sp)
+add $11 $9 $10
+sw $11 164($sp)
+lw $9 8($fp)
+sw $9 176($sp)
+lw $9 164($sp)
+lw $10 176($sp)
+add $11 $9 $10
+sw $11 164($sp)
+lw $9 12($fp)
+sw $9 180($sp)
+lw $9 164($sp)
+lw $10 180($sp)
+add $11 $9 $10
+sw $11 164($sp)
+lw $9 16($fp)
+sw $9 184($sp)
+lw $9 164($sp)
+lw $10 184($sp)
+add $11 $9 $10
+sw $11 164($sp)
+lw $9 164($sp)
+sw $9 24($sp)
+lw $9 20($fp)
+sw $9 196($sp)
+lw $9 196($sp)
+sw $9 4($sp)
+li $9 1000
+sw $9 200($sp)
+lw $9 200($sp)
+sw $9 8($sp)
+lw $9 4($sp)
+sw $9 12($sp)
+lw $9 8($sp)
+sw $9 16($sp)
+lw $9 12($sp)
+lw $10 16($sp)
+div $9 $10
+mfhi $11
+sw $11 12($sp)
+li $9 0
+sw $9 20($sp)
+lw $9 12($sp)
+lw $10 20($sp)
+seq $11 $9 $10
+sw $11 12($sp)
+lw $9 12($sp)
+beqz $9 label_25
+j label_23
+
+
+label_25:
+j label_24
+
+
+label_23:
+li $9 1
+sw $9 24($sp)
+lw $9 24($sp)
+sw $9 192($sp)
+j label_20
+
+
+label_24:
+li $9 0
+sw $9 28($sp)
+lw $9 28($sp)
+sw $9 192($sp)
+j label_20
+
+j label_20
+
+
+label_20:
+lw $9 192($sp)
+sw $9 188($sp)
+lw $9 188($sp)
+beqz $9 label_19
+j label_17
+
+
+label_19:
+j label_18
+
+
+label_17:
+lw $9 8($sp)
+sw $9 204($sp)
+lw $9 12($sp)
+sw $9 208($sp)
+lw $9 204($sp)
+lw $10 208($sp)
+add $11 $9 $10
+sw $11 204($sp)
+lw $9 16($sp)
+sw $9 212($sp)
+lw $9 204($sp)
+lw $10 212($sp)
+add $11 $9 $10
+sw $11 204($sp)
+lw $9 20($sp)
+sw $9 216($sp)
+lw $9 204($sp)
+lw $10 216($sp)
+add $11 $9 $10
+sw $11 204($sp)
+lw $9 24($sp)
+sw $9 220($sp)
+lw $9 204($sp)
+lw $10 220($sp)
+add $11 $9 $10
+sw $11 204($sp)
+la $a0 str_3
+li $v0 4
+syscall
+lw $9 204($sp)
+move $a0 $9
+li $v0 1
+syscall
+la $a0 str_4
+li $v0 4
+syscall
+
+label_18:
+lw $9 20($fp)
+sw $9 228($sp)
+lw $9 228($sp)
+sw $9 4($sp)
+lw $9 20($fp)
+sw $9 8($sp)
+li $9 1
+sw $9 12($sp)
+lw $9 8($sp)
+lw $10 12($sp)
+add $11 $9 $10
+sw $11 8($sp)
+lw $9 8($sp)
+sw $9 20($fp)
+lw $9 20($fp)
+sw $9 16($sp)
+lw $9 16($sp)
+sw $9 224($sp)
+j label_28
+
+j label_28
+
+
+label_28:
+j label_8
+
+
+label_10:
+lw $9 8($sp)
+sw $9 232($sp)
+lw $9 12($sp)
+sw $9 236($sp)
+lw $9 232($sp)
+lw $10 236($sp)
+add $11 $9 $10
+sw $11 232($sp)
+lw $9 16($sp)
+sw $9 240($sp)
+lw $9 232($sp)
+lw $10 240($sp)
+add $11 $9 $10
+sw $11 232($sp)
+lw $9 20($sp)
+sw $9 244($sp)
+lw $9 232($sp)
+lw $10 244($sp)
+add $11 $9 $10
+sw $11 232($sp)
+lw $9 24($sp)
+sw $9 248($sp)
+lw $9 232($sp)
+lw $10 248($sp)
+add $11 $9 $10
+sw $11 232($sp)
+lw $24 232($sp)
+jr $ra
+jr $ra
+
+label_0:
+li $9 0
+sw $9 4($sp)
+li $v0 5
+syscall
+move $9 $v0
+sw $9 8($sp)
+lw $9 8($sp)
+sw $9 0($fp)
+li $v0 5
+syscall
+move $9 $v0
+sw $9 12($sp)
+lw $9 12($sp)
+sw $9 4($fp)
+li $v0 5
+syscall
+move $9 $v0
+sw $9 16($sp)
+lw $9 16($sp)
+sw $9 8($fp)
+li $v0 5
+syscall
+move $9 $v0
+sw $9 20($sp)
+lw $9 20($sp)
+sw $9 12($fp)
+li $v0 5
+syscall
+move $9 $v0
+sw $9 24($sp)
+lw $9 24($sp)
+sw $9 16($fp)
+li $v0 5
+syscall
+move $9 $v0
+sw $9 28($sp)
+lw $9 28($sp)
+sw $9 4($sp)
+lw $9 4($sp)
+sw $9 32($sp)
+la $a0 str_5
+li $v0 4
+syscall
+lw $9 32($sp)
+move $a0 $9
+li $v0 1
+syscall
+la $a0 str_6
+li $v0 4
+syscall
+lw $9 20($fp)
+sw $9 4($sp)
+la $a0 str_1
+li $v0 4
+syscall
+lw $9 4($sp)
+move $a0 $9
+li $v0 1
+syscall
+la $a0 str_2
+li $v0 4
+syscall
+li $9 1906
+sw $9 28($sp)
+
+label_37:
+lw $9 20($fp)
+sw $9 32($sp)
+li $9 10000
+sw $9 36($sp)
+lw $9 32($sp)
+lw $10 36($sp)
+slt $11 $9 $10
+sw $11 32($sp)
+lw $9 32($sp)
+beqz $9 label_40
+j label_38
+
+
+label_40:
+j label_39
+
+
+label_38:
+lw $9 0($fp)
+sw $9 40($sp)
+li $9 4
+sw $9 44($sp)
+lw $9 40($sp)
+lw $10 44($sp)
+mul $11 $9 $10
+sw $11 40($sp)
+li $9 32
+sw $9 48($sp)
+lw $9 40($sp)
+lw $10 48($sp)
+mul $11 $9 $10
+sw $11 40($sp)
+lw $9 0($fp)
+sw $9 52($sp)
+lw $9 40($sp)
+lw $10 52($sp)
+mul $11 $9 $10
+sw $11 40($sp)
+lw $9 0($fp)
+sw $9 56($sp)
+lw $9 40($sp)
+lw $10 56($sp)
+div $9 $10
+mflo $11
+sw $11 40($sp)
+li $9 32
+sw $9 60($sp)
+lw $9 40($sp)
+lw $10 60($sp)
+div $9 $10
+mflo $11
+sw $11 40($sp)
+lw $9 4($fp)
+sw $9 72($sp)
+lw $9 72($sp)
+sw $9 4($sp)
+lw $9 40($sp)
+sw $9 76($sp)
+lw $9 76($sp)
+sw $9 8($sp)
+li $9 0
+sw $9 12($sp)
+li $9 128
+sw $9 16($sp)
+lw $9 4($sp)
+sw $9 20($sp)
+lw $9 8($sp)
+sw $9 24($sp)
+lw $9 20($sp)
+lw $10 24($sp)
+add $11 $9 $10
+sw $11 20($sp)
+lw $9 16($sp)
+sw $9 28($sp)
+lw $9 20($sp)
+lw $10 28($sp)
+div $9 $10
+mfhi $11
+sw $11 20($sp)
+lw $9 20($sp)
+sw $9 68($sp)
+j label_41
+
+j label_41
+
+
+label_41:
+lw $9 68($sp)
+sw $9 64($sp)
+lw $9 64($sp)
+sw $9 4($fp)
+lw $9 0($fp)
+sw $9 80($sp)
+li $9 4
+sw $9 84($sp)
+lw $9 80($sp)
+lw $10 84($sp)
+mul $11 $9 $10
+sw $11 80($sp)
+lw $9 4($fp)
+sw $9 88($sp)
+lw $9 80($sp)
+lw $10 88($sp)
+add $11 $9 $10
+sw $11 80($sp)
+lw $9 8($fp)
+sw $9 92($sp)
+lw $9 80($sp)
+lw $10 92($sp)
+add $11 $9 $10
+sw $11 80($sp)
+lw $9 80($sp)
+sw $9 8($sp)
+lw $9 0($fp)
+sw $9 96($sp)
+li $9 4
+sw $9 100($sp)
+lw $9 96($sp)
+lw $10 100($sp)
+mul $11 $9 $10
+sw $11 96($sp)
+lw $9 4($fp)
+sw $9 104($sp)
+lw $9 96($sp)
+lw $10 104($sp)
+add $11 $9 $10
+sw $11 96($sp)
+lw $9 8($fp)
+sw $9 108($sp)
+lw $9 96($sp)
+lw $10 108($sp)
+add $11 $9 $10
+sw $11 96($sp)
+lw $9 12($fp)
+sw $9 112($sp)
+lw $9 96($sp)
+lw $10 112($sp)
+add $11 $9 $10
+sw $11 96($sp)
+lw $9 96($sp)
+sw $9 12($sp)
+lw $9 0($fp)
+sw $9 116($sp)
+li $9 4
+sw $9 120($sp)
+lw $9 116($sp)
+lw $10 120($sp)
+mul $11 $9 $10
+sw $11 116($sp)
+lw $9 4($fp)
+sw $9 124($sp)
+lw $9 116($sp)
+lw $10 124($sp)
+add $11 $9 $10
+sw $11 116($sp)
+lw $9 8($fp)
+sw $9 128($sp)
+lw $9 116($sp)
+lw $10 128($sp)
+add $11 $9 $10
+sw $11 116($sp)
+lw $9 12($fp)
+sw $9 132($sp)
+lw $9 116($sp)
+lw $10 132($sp)
+add $11 $9 $10
+sw $11 116($sp)
+lw $9 16($fp)
+sw $9 136($sp)
+lw $9 116($sp)
+lw $10 136($sp)
+add $11 $9 $10
+sw $11 116($sp)
+lw $9 116($sp)
+sw $9 16($sp)
+lw $9 0($fp)
+sw $9 140($sp)
+li $9 4
+sw $9 144($sp)
+lw $9 140($sp)
+lw $10 144($sp)
+mul $11 $9 $10
+sw $11 140($sp)
+lw $9 4($fp)
+sw $9 148($sp)
+lw $9 140($sp)
+lw $10 148($sp)
+add $11 $9 $10
+sw $11 140($sp)
+lw $9 8($fp)
+sw $9 152($sp)
+lw $9 140($sp)
+lw $10 152($sp)
+add $11 $9 $10
+sw $11 140($sp)
+lw $9 12($fp)
+sw $9 156($sp)
+lw $9 140($sp)
+lw $10 156($sp)
+add $11 $9 $10
+sw $11 140($sp)
+lw $9 16($fp)
+sw $9 160($sp)
+lw $9 140($sp)
+lw $10 160($sp)
+add $11 $9 $10
+sw $11 140($sp)
+lw $9 140($sp)
+sw $9 20($sp)
+lw $9 0($fp)
+sw $9 164($sp)
+li $9 4
+sw $9 168($sp)
+lw $9 164($sp)
+lw $10 168($sp)
+mul $11 $9 $10
+sw $11 164($sp)
+lw $9 4($fp)
+sw $9 172($sp)
+lw $9 164($sp)
+lw $10 172($sp)
+add $11 $9 $10
+sw $11 164($sp)
+lw $9 8($fp)
+sw $9 176($sp)
+lw $9 164($sp)
+lw $10 176($sp)
+add $11 $9 $10
+sw $11 164($sp)
+lw $9 12($fp)
+sw $9 180($sp)
+lw $9 164($sp)
+lw $10 180($sp)
+add $11 $9 $10
+sw $11 164($sp)
+lw $9 16($fp)
+sw $9 184($sp)
+lw $9 164($sp)
+lw $10 184($sp)
+add $11 $9 $10
+sw $11 164($sp)
+lw $9 164($sp)
+sw $9 24($sp)
+lw $9 20($fp)
+sw $9 196($sp)
+lw $9 196($sp)
+sw $9 4($sp)
+li $9 1000
+sw $9 200($sp)
+lw $9 200($sp)
+sw $9 8($sp)
+lw $9 4($sp)
+sw $9 12($sp)
+lw $9 8($sp)
+sw $9 16($sp)
+lw $9 12($sp)
+lw $10 16($sp)
+div $9 $10
+mfhi $11
+sw $11 12($sp)
+li $9 0
+sw $9 20($sp)
+lw $9 12($sp)
+lw $10 20($sp)
+seq $11 $9 $10
+sw $11 12($sp)
+lw $9 12($sp)
+beqz $9 label_54
+j label_52
+
+
+label_54:
+j label_53
+
+
+label_52:
+li $9 1
+sw $9 24($sp)
+lw $9 24($sp)
+sw $9 192($sp)
+j label_49
+
+
+label_53:
+li $9 0
+sw $9 28($sp)
+lw $9 28($sp)
+sw $9 192($sp)
+j label_49
+
+j label_49
+
+
+label_49:
+lw $9 192($sp)
+sw $9 188($sp)
+lw $9 188($sp)
+beqz $9 label_48
+j label_46
+
+
+label_48:
+j label_47
+
+
+label_46:
+lw $9 8($sp)
+sw $9 204($sp)
+lw $9 12($sp)
+sw $9 208($sp)
+lw $9 204($sp)
+lw $10 208($sp)
+add $11 $9 $10
+sw $11 204($sp)
+lw $9 16($sp)
+sw $9 212($sp)
+lw $9 204($sp)
+lw $10 212($sp)
+add $11 $9 $10
+sw $11 204($sp)
+lw $9 20($sp)
+sw $9 216($sp)
+lw $9 204($sp)
+lw $10 216($sp)
+add $11 $9 $10
+sw $11 204($sp)
+lw $9 24($sp)
+sw $9 220($sp)
+lw $9 204($sp)
+lw $10 220($sp)
+add $11 $9 $10
+sw $11 204($sp)
+la $a0 str_3
+li $v0 4
+syscall
+lw $9 204($sp)
+move $a0 $9
+li $v0 1
+syscall
+la $a0 str_4
+li $v0 4
+syscall
+
+label_47:
+lw $9 20($fp)
+sw $9 228($sp)
+lw $9 228($sp)
+sw $9 4($sp)
+lw $9 20($fp)
+sw $9 8($sp)
+li $9 1
+sw $9 12($sp)
+lw $9 8($sp)
+lw $10 12($sp)
+add $11 $9 $10
+sw $11 8($sp)
+lw $9 8($sp)
+sw $9 20($fp)
+lw $9 20($fp)
+sw $9 16($sp)
+lw $9 16($sp)
+sw $9 224($sp)
+j label_57
+
+j label_57
+
+
+label_57:
+j label_37
+
+
+label_39:
+lw $9 8($sp)
+sw $9 232($sp)
+lw $9 12($sp)
+sw $9 236($sp)
+lw $9 232($sp)
+lw $10 236($sp)
+add $11 $9 $10
+sw $11 232($sp)
+lw $9 16($sp)
+sw $9 240($sp)
+lw $9 232($sp)
+lw $10 240($sp)
+add $11 $9 $10
+sw $11 232($sp)
+lw $9 20($sp)
+sw $9 244($sp)
+lw $9 232($sp)
+lw $10 244($sp)
+add $11 $9 $10
+sw $11 232($sp)
+lw $9 24($sp)
+sw $9 248($sp)
+lw $9 232($sp)
+lw $10 248($sp)
+add $11 $9 $10
+sw $11 232($sp)
+lw $9 232($sp)
+sw $9 40($sp)
+j label_34
+
+j label_34
+
+
+label_34:
+lw $9 40($sp)
+sw $9 36($sp)
+lw $9 36($sp)
+move $a0 $9
+li $v0 1
+syscall
+la $a0 str_8
+li $v0 4
+syscall
+li $v0 10
+syscall
+li $v0 10
+syscall

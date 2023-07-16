@@ -1,0 +1,40 @@
+“Do not take to heart every thing you hear.”
+
+“Do not spend all that you have.”
+
+“Do not sleep as long as you want;”
+
+
+all 1
+
+as 2
+
+do 3
+
+every 1
+
+have 1
+
+hear 1
+
+heart 1
+
+long 1
+
+not 3
+
+sleep 1
+
+spend 1
+
+take 1
+
+that 1
+
+thing 1
+
+to 1
+
+want 1
+
+you 3
